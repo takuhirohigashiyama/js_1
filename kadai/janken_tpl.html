@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands"></span>」</div>
+  <div>勝敗：<span id="judgment"></span></div>
+  <div class="btn">
+    <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(false);">
+  </div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+// グーを押した時の挙動
+    $("#gu_btn").on("click",function(){
+  const num = Math.ceil( Math.random() * 3 ); 
+	console.log(num);
+  if(num === 1){
+		$("#pc_hands").append("グー");
+		$("#judgment").append("あいこ");
+  }else if(num === 2){
+    $("#pc_hands").append("チョキ");
+		$("#judgment").append("勝ち");
+  }else{
+    $("#pc_hands").append("パー");
+		$("#judgment").append("負け");
+  }
+});
+
+// チョキを押した時の挙動
+$("#cho_btn").on("click",function(){
+  const num = Math.ceil( Math.random() * 3 ); 
+	console.log(num);
+  if(num === 1){
+		$("#pc_hands").append("グー");
+		$("#judgment").append("負け");
+  }else if(num === 2){
+    $("#pc_hands").append("チョキ");
+		$("#judgment").append("あいこ");
+  }else{
+    $("#pc_hands").append("パー");
+		$("#judgment").append("勝ち");
+  }
+});
+
+// パーを押した時の挙動
+$("#par_btn").on("click",function(){
+  const num = Math.ceil( Math.random() * 3 ); 
+	console.log(num);
+  if(num === 1){
+		$("#pc_hands").append("グー");
+		$("#judgment").append("勝ち");
+  }else if(num === 2){
+    $("#pc_hands").append("チョキ");
+		$("#judgment").append("負け");
+  }else{
+    $("#pc_hands").append("パー");
+		$("#judgment").append("あいこ");
+  }
+});
+
+</script>
+</body>
+</html>
